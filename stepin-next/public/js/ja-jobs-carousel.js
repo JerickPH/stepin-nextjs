@@ -174,7 +174,10 @@
       // silently stops looping (v11) or shows gaps/jumps (v8). Repeat the full
       // job set until there are enough, so the order always cycles cleanly.
       var maxView = Math.ceil(Math.max(view.sm, view.md, view.lg, view.xl));
-      var minSlides = loop ? maxView * 2 + 1 : jobs.length;
+      // Only loop when there are more real jobs than cards on screen; otherwise
+      // show each job once (no repeated filler cards) and centre them.
+      var canLoop = loop && jobs.length > maxView;
+      var minSlides = canLoop ? maxView * 2 + 1 : jobs.length;
       var total = jobs.length;
       while (total < minSlides) total += jobs.length;
 
@@ -193,14 +196,15 @@
       var pagEl = root.querySelector(".swiper-pagination");
 
       var opts = {
-        loop: loop,
-        loopAdditionalSlides: loop ? maxView : 0, // v8: extra clones each side
+        loop: canLoop,
+        loopAdditionalSlides: canLoop ? maxView : 0,
         centeredSlides: !!cfg.center,
+        centerInsufficientSlides: true,
         spaceBetween: cfg.space || 24,
         slidesPerView: view.sm,
         speed: 600,
         grabCursor: true,
-        watchOverflow: !loop,
+        watchOverflow: !canLoop,
         observer: true, // re-measure if the parent was hidden / resized
         observeParents: true,
         breakpoints: {
