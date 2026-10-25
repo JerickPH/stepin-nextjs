@@ -5,6 +5,7 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import Popups from "@/components/Popups";
 import { getPage, pages, readFragment } from "@/lib/site";
+import { JOBS_CAROUSEL_MARKER, renderJobsCarousel } from "@/lib/jobsCarousel";
 
 export const dynamicParams = false;
 
@@ -27,6 +28,11 @@ export default async function SitePage({ params }: Props) {
   if (!page) notFound();
 
   // Runs before any content paints: apply the WordPress body classes Elementor's CSS/JS expect.
+  // Shortcode equivalent: swap the marker for the JobAdder carousel markup.
+  let main = readFragment("pages", `${page.key}.html`);
+  const hasJobs = main.includes(JOBS_CAROUSEL_MARKER);
+  if (hasJobs) main = main.replace(JOBS_CAROUSEL_MARKER, renderJobsCarousel());
+
   const bodyInit = `document.body.className=${JSON.stringify(page.bodyClass)};`;
 
   return (
@@ -34,12 +40,14 @@ export default async function SitePage({ params }: Props) {
       <script dangerouslySetInnerHTML={{ __html: bodyInit }} />
       <script src="/js/jquery.js" />
       <SiteHeader />
-      <RawHtml html={readFragment("pages", `${page.key}.html`)} />
+      {hasJobs && <link rel="stylesheet" href="/css/ja-jobs-carousel.css" precedence="default" />}
+      <RawHtml html={main} />
       <SiteFooter variant={page.footer} />
       <Popups />
       {/* Per-page Elementor config (post id, AJAX url) followed by the shared script bundle */}
       <RawHtml html={readFragment("scripts", `${page.key}.html`)} />
       <script src="/js/site.js" />
+      {hasJobs && <script src="/js/ja-jobs-carousel.js" />}
       <script src="/js/stepin.js" />
     </>
   );
