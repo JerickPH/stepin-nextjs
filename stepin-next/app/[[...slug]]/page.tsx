@@ -40,8 +40,9 @@ export default async function SitePage({ params }: Props) {
       <script dangerouslySetInnerHTML={{ __html: bodyInit }} />
       <script src="/js/jquery.js" />
       <SiteHeader />
-      {hasJobs && <link rel="stylesheet" href="/css/ja-jobs-carousel.css" precedence="default" />}
       <RawHtml html={main} />
+      {/* Must load AFTER site.css (like WordPress did) so the card styles win over theme button styles */}
+      {hasJobs && <RawHtml html={'<link rel="stylesheet" href="/css/ja-jobs-carousel.css">'} />}
       <SiteFooter variant={page.footer} />
       <Popups />
       {/* Per-page Elementor config (post id, AJAX url) followed by the shared script bundle */}
