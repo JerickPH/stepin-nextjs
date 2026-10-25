@@ -1,0 +1,136 @@
+<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+		
+		
+<main id="content" class="site-main post-2 page type-page status-publish hentry">
+
+			<div class="page-header">
+			<h1 class="entry-title">Sample Page</h1>		</div>
+	
+	<div class="page-content">
+				<div data-elementor-type="wp-page" data-elementor-id="2" class="elementor elementor-2" data-elementor-post-type="page">
+				<div class="elementor-element elementor-element-66e8db01 e-flex e-con-boxed e-con e-parent" data-id="66e8db01" data-element_type="container" data-e-type="container">
+					<div class="e-con-inner">
+				<div class="elementor-element elementor-element-171dff63 elementor-widget elementor-widget-text-editor" data-id="171dff63" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
+									
+<p class="wp-block-paragraph">This is an example page. It&#8217;s different from a blog post because it will stay in one place and will show up in your site navigation (in most themes). Most people start with an About page that introduces them to potential site visitors. It might say something like this:</p>
+
+<blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow">
+<p class="wp-block-paragraph">Hi there! I&#8217;m a bike messenger by day, aspiring actor by night, and this is my website. I live in Los Angeles, have a great dog named Jack, and I like piña coladas. (And gettin&#8217; caught in the rain.)</p>
+</blockquote>
+
+<p class="wp-block-paragraph">&#8230;or something like this:</p>
+
+<blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow">
+<p class="wp-block-paragraph">The XYZ Doohickey Company was founded in 1971, and has been providing quality doohickeys to the public ever since. Located in Gotham City, XYZ employs over 2,000 people and does all kinds of awesome things for the Gotham community.</p>
+</blockquote>
+
+<p class="wp-block-paragraph">As a new WordPress user, you should go to <a href="/wp-admin/">your dashboard</a> to delete this page and create new pages for your content. Have fun!</p>
+								</div>
+					</div>
+				</div>
+		<div class="elementor-element elementor-element-be045c5 e-con-full e-flex e-con e-parent" data-id="be045c5" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-eeb3311 elementor-widget elementor-widget-html" data-id="eeb3311" data-element_type="widget" data-e-type="widget" data-widget_type="html.default">
+					<!-- JobAdder jobs carousel — STEP IN Recruitment -->
+<div id="ja-source" aria-hidden="true"><div id="ja-jobs-widget"></div></div>
+
+<div class="swiper ja-carousel">
+  <div class="swiper-wrapper" id="ja-track"></div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-pagination"></div>
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  var _baseUrl = "//apps.jobadder.com/widgets";
+  var _jaJobsSettings = {
+    key: "AU6_on3jzehmrzauvadamsn6x3t3gm",
+    jobsPerPage: 24,                       // default is 5 — raise to load all roles into the carousel
+    applicationFormSettings: {
+      useExternalApplicationForm: true,
+      showExternalApplicationFormInNewWindow: false
+    }
+  };
+</script>
+<script src="//apps.jobadder.com/widgets/v1/jobs.min.js"></script>
+
+<script>
+(function () {
+  var KEY    = "AU6_on3jzehmrzauvadamsn6x3t3gm";
+  var REGION = KEY.split("_")[0].toLowerCase();   // au6
+  var TOKEN  = KEY.split("_")[1];                 // on3jzehmrzauvadamsn6x3t3gm
+  var BOARD  = "1426";                            // your JobAdder account id (constant)
+  function applyUrl(id){ return "https://apply.jobadder.com/"+REGION+"/"+BOARD+"/"+id+"/"+TOKEN; }
+
+  var source = document.getElementById('ja-jobs-widget');
+  var track  = document.getElementById('ja-track');
+  var built  = false;
+
+  function build() {
+    var jobs = source.querySelectorAll('.ja-job-list .job');
+    if (built || !jobs.length) return;
+    built = true;
+
+    jobs.forEach(function (job) {
+      var link = job.querySelector('.title a[data-job-id]');
+      if (!link) return;
+      var id    = link.getAttribute('data-job-id');
+      var title = link.textContent.trim();
+      var locEl = job.querySelector('.classifications li[data-id="31458"]')  // location field
+               || job.querySelectorAll('.classifications li')[2];            // fallback: 3rd tag
+      var location = locEl ? locEl.textContent.trim() : '';
+
+      var card = document.createElement('a');
+      card.className = 'ja-card';
+      card.href   = applyUrl(id);
+      card.target = '_blank';
+      card.rel    = 'noopener';
+      card.innerHTML =
+        '<h3 class="ja-card-title">' + title + '</h3>' +
+        '<p class="ja-card-meta">' + location + '</p>';
+
+      var slide = document.createElement('div');
+      slide.className = 'swiper-slide';
+      slide.appendChild(card);
+      track.appendChild(slide);
+    });
+
+    new Swiper('.ja-carousel', {
+      slidesPerView: 1.15, spaceBetween: 16,
+      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+      pagination: { el: '.swiper-pagination', clickable: true },
+      breakpoints: {
+        768:  { slidesPerView: 2 },   // tablet
+        1024: { slidesPerView: 4 }    // desktop — 4 per view
+      }
+    });
+  }
+
+  new MutationObserver(build).observe(source, { childList: true, subtree: true });
+  document.addEventListener('DOMContentLoaded', build);
+})();
+</script>
+
+<style>
+  #ja-source{position:absolute!important;left:-9999px!important;top:0!important;height:0;overflow:hidden;}
+  .ja-carousel{padding:8px 4px 44px;}
+  .ja-card{display:flex;flex-direction:column;gap:8px;height:100%;box-sizing:border-box;
+    padding:24px;border:1px solid #e2e8f0;border-radius:14px;background:#fff;
+    text-decoration:none;color:#15304f;transition:box-shadow .2s ease,transform .2s ease;}
+  .ja-card:hover{box-shadow:0 12px 26px rgba(21,48,79,.12);transform:translateY(-3px);}
+  .ja-card-title{margin:0;font-size:18px;line-height:1.3;font-weight:700;}
+  .ja-card-meta{margin:0;color:#5a6673;font-size:14px;}
+  .ja-carousel .swiper-button-prev,.ja-carousel .swiper-button-next{color:#2f6fb0;}
+  .ja-carousel .swiper-pagination-bullet-active{background:#2f6fb0;}
+</style>				</div>
+				</div>
+				</div>
+		
+		
+			</div>
+
+	
+</main>

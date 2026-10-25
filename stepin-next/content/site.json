@@ -1,0 +1,77 @@
+{
+ "externalStylesheets": [
+  "https://fonts.googleapis.com/css?family=Roboto:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic&display=swap",
+  "https://fonts.googleapis.com/css?family=Roboto+Slab:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic&display=swap",
+  "https://fonts.googleapis.com/css?family=Inter:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic&display=swap",
+  "https://fonts.googleapis.com/css?family=Lato:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic&display=swap"
+ ],
+ "externalScripts": [],
+ "pages": {
+  "home": {
+   "slug": "",
+   "title": "Step In Recruitment",
+   "bodyClass": "home wp-singular page-template page-template-elementor_header_footer page page-id-13 wp-custom-logo wp-embed-responsive wp-theme-hello-elementor wp-child-theme-hello-elementor-child hello-elementor-default elementor-default elementor-template-full-width elementor-kit-6 elementor-page elementor-page-13",
+   "footer": "759"
+  },
+  "about": {
+   "slug": "about",
+   "title": "About \u2013 Step In Recruitment",
+   "bodyClass": "wp-singular page-template page-template-elementor_header_footer page page-id-317 wp-custom-logo wp-embed-responsive wp-theme-hello-elementor wp-child-theme-hello-elementor-child hello-elementor-default elementor-default elementor-template-full-width elementor-kit-6 elementor-page elementor-page-317",
+   "footer": "759"
+  },
+  "services": {
+   "slug": "services",
+   "title": "Services \u2013 Step In Recruitment",
+   "bodyClass": "wp-singular page-template page-template-elementor_header_footer page page-id-851 wp-custom-logo wp-embed-responsive wp-theme-hello-elementor wp-child-theme-hello-elementor-child hello-elementor-default elementor-default elementor-template-full-width elementor-kit-6 elementor-page elementor-page-851",
+   "footer": "759"
+  },
+  "industries": {
+   "slug": "industries",
+   "title": "Industries \u2013 Step In Recruitment",
+   "bodyClass": "wp-singular page-template page-template-page-template page-template-template-industries page-template-page-templatetemplate-industries-php page page-id-1073 wp-custom-logo wp-embed-responsive wp-theme-hello-elementor wp-child-theme-hello-elementor-child hello-elementor-default elementor-default elementor-kit-6 elementor-page elementor-page-1073",
+   "footer": "759"
+  },
+  "why-step-in": {
+   "slug": "why-step-in",
+   "title": "Why Step In \u2013 Step In Recruitment",
+   "bodyClass": "wp-singular page-template page-template-elementor_header_footer page page-id-1342 wp-custom-logo wp-embed-responsive wp-theme-hello-elementor wp-child-theme-hello-elementor-child hello-elementor-default elementor-default elementor-template-full-width elementor-kit-6 elementor-page elementor-page-1342",
+   "footer": "759"
+  },
+  "testimonials": {
+   "slug": "testimonials",
+   "title": "Testimonials \u2013 Step In Recruitment",
+   "bodyClass": "wp-singular page-template page-template-elementor_header_footer page page-id-1116 wp-custom-logo wp-embed-responsive wp-theme-hello-elementor wp-child-theme-hello-elementor-child hello-elementor-default elementor-default elementor-template-full-width elementor-kit-6 elementor-page elementor-page-1116",
+   "footer": "759"
+  },
+  "your-next-step": {
+   "slug": "your-next-step",
+   "title": "Your Next Step \u2013 Step In Recruitment",
+   "bodyClass": "wp-singular page-template page-template-elementor_header_footer page page-id-2257 wp-custom-logo wp-embed-responsive wp-theme-hello-elementor wp-child-theme-hello-elementor-child hello-elementor-default elementor-default elementor-template-full-width elementor-kit-6 elementor-page elementor-page-2257",
+   "footer": "1884"
+  },
+  "your-next-step-3": {
+   "slug": "your-next-step-3",
+   "title": "Your Next Step 3 \u2013 Step In Recruitment",
+   "bodyClass": "wp-singular page-template page-template-elementor_header_footer page page-id-1370 wp-custom-logo wp-embed-responsive wp-theme-hello-elementor wp-child-theme-hello-elementor-child hello-elementor-default elementor-default elementor-template-full-width elementor-kit-6 elementor-page elementor-page-1370",
+   "footer": "1884"
+  },
+  "build-your-team": {
+   "slug": "build-your-team",
+   "title": "Build Your Team \u2013 Step In Recruitment",
+   "bodyClass": "wp-singular page-template page-template-elementor_header_footer page page-id-2286 wp-custom-logo wp-embed-responsive wp-theme-hello-elementor wp-child-theme-hello-elementor-child hello-elementor-default elementor-default elementor-template-full-width elementor-kit-6 elementor-page elementor-page-2286",
+   "footer": "1884"
+  },
+  "contact-us": {
+   "slug": "contact-us",
+   "title": "Contact Us \u2013 Step In Recruitment",
+   "bodyClass": "wp-singular page-template page-template-elementor_header_footer page page-id-1134 wp-custom-logo wp-embed-responsive wp-theme-hello-elementor wp-child-theme-hello-elementor-child hello-elementor-default elementor-default elementor-template-full-width elementor-kit-6 elementor-page elementor-page-1134",
+   "footer": "759"
+  },
+  "sample-page": {
+   "slug": "sample-page",
+   "title": "Sample Page \u2013 Step In Recruitment",
+   "bodyClass": "wp-singular page-template-default page page-id-2 wp-custom-logo wp-embed-responsive wp-theme-hello-elementor wp-child-theme-hello-elementor-child hello-elementor-default elementor-default elementor-kit-6 elementor-page elementor-page-2",
+   "footer": "759"
+  }
+ }
+}
